@@ -15,6 +15,12 @@
 - [ ] Add prettier config
 - [ ] Add actual Readme
 
+
 # Additional Features
 
 - [ ] QR-Code integration/generation
+- [ ] Add color picker controls to form for background/text-color
+
+# Links
+
+- https://flatuicolors.com/palette/de

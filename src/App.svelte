@@ -34,15 +34,25 @@
     width: 400px;
     height: 100%;
     padding: 1rem;
-    background: lightblue;
+    background: #d1d8e0;
     transition: all 0.5s;
   }
 
-  h1 {
-    color: #ff3e00;
+  h1,
+  h2 {
+    margin: 2rem;
+    color: #4b7bec;
     text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
   }
 
   @media (min-width: 640px) {
@@ -56,6 +66,7 @@
   {#if isFormVisible}
     <aside
       transition:fly={{ delay: 250, duration: 300, x: -400, y: 0, opacity: 0.5, easing: quintOut }}>
+      <h2>Configuration</h2>
       <Form />
     </aside>
   {/if}
