@@ -1,37 +1,75 @@
 <script>
-  import { Textfield } from 'svelte-mui';
   import { boardingCard } from './store.js';
 </script>
 
-<Textfield
-  autocomplete="off"
-  label="Host"
-  required
-  bind:value={$boardingCard.host} />
-<Textfield
-  autocomplete="off"
-  label="Guest"
-  required
-  bind:value={$boardingCard.guest} />
-<Textfield
-  autocomplete="off"
-  label="Occasion"
-  required
-  bind:value={$boardingCard.occasion} />
+<style>
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-self: start;
 
-<textarea class="textarea" rows="4" value={$boardingCard.location} />
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4b7bec;
+  }
 
-<Textfield
-  autocomplete="off"
-  label="Directions"
-  required
-  bind:value={$boardingCard.directions} />
-<Textfield
-  autocomplete="off"
-  label="Tel"
-  required
-  bind:value={$boardingCard.phone} />
+  label > input,
+  label > textarea {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
 
+  textarea {
+    resize: vertical;
+  }
+</style>
+
+<label>
+  Name
+  <input
+    type="text"
+    bind:value={$boardingCard.host}
+    required
+    autocomplete="off" />
+</label>
+<label>
+  Guest
+  <input
+    type="text"
+    bind:value={$boardingCard.guest}
+    required
+    autocomplete="off" />
+</label>
+<label>
+  Occasion
+  <input
+    type="text"
+    bind:value={$boardingCard.occasion}
+    required
+    autocomplete="off" />
+</label>
+<label>
+  Location
+  <textarea bind:value={$boardingCard.location} rows="4" />
+</label>
+
+<label>
+  Directions
+  <input
+    type="text"
+    bind:value={$boardingCard.directions}
+    required
+    autocomplete="off" />
+</label>
+<label>
+  Telephone
+  <input
+    type="text"
+    bind:value={$boardingCard.phone}
+    required
+    autocomplete="off" />
+</label>
 <label for="meeting-time">
   Date and Starting Time:
   <input type="datetime-local" bind:value={$boardingCard.dateTime} />
